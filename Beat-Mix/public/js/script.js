@@ -22,7 +22,7 @@ const getDrumArrayByName = (name) => {
     }
 };
 
-//a function called toggleDrum(a string representing array name, an index number)
+//toggleDrum function; toggleDrum(a string representing array name, an index number)
 const toggleDrum = (drumArrayName, index) => {
     //find drum type
     const drums = getDrumArrayByName(drumArrayName);
@@ -32,12 +32,24 @@ const toggleDrum = (drumArrayName, index) => {
     drums[index] = !drums[index];
 };
 
-//a clear function; takes an array name string and sets all values in the array to false
+//clear function; takes an array name string and sets all values in the array to false
 const clear = (drumArrayName) => {
     //find drum type
     const drums = getDrumArrayByName(drumArrayName);
     if(drums){
         drums.fill(false);
+    }
+};
+
+//invert; takes drum array name and flips boolean value of all elements in the correct array
+const invert = (drumArrayName) => {
+    //find drum type
+    const drums = getDrumArrayByName(drumArrayName);
+    if(!drums){
+        return;
+    }
+    for(let i = 0; i < drums.length; i++){
+        drums[i] = !drums[i];
     }
 };
 
